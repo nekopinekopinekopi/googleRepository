@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}  {# RegistUserViewはCreateViewを継承しているから、それに沿った書き方にしてると。だからcontextないじゃん！って思ったけどこれはこの書き方でいいんだろうな#}
+  <input type="submit" value="ユーザー登録">
+</form>
+{% endblock %}
